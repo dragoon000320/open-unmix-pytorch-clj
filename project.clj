@@ -9,6 +9,7 @@
             [lein-shell "0.5.0"]
             [lein-ancient "0.6.15"]
             [lein-changelog "0.3.2"]]
+  :profiles {:dev {:dependencies [[org.clojure/test.check "0.10.0"]]}}
   :aliases {"update-readme-version"
             ["shell" "sed" "-i"
              "s/\\\\[dragoon\\\\/open-unmix-pytorch-clj \"[0-9.]*\"\\\\]/[dragoon\\\\/open-unmix-pytorch-clj \"${:version}\"]/"
