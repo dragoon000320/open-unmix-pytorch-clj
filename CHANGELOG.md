@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1-ALPHA
+### Fixed
+- hotfix of ->2-channels func
+
 ## 0.1.0-ALPHA
 ### Added
 - separation of audio into audio sources
