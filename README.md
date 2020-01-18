@@ -32,7 +32,7 @@ A little demo how to use it
 
 (require '[open-unmix-pytorch-clj.convert :as conv])
 
-(->> "your-audio-file.wav"
+(-> "your-audio-file.wav"
     ;; reads audio file
     oup.io/soundfile-read
     ;; converts audio data to 2 channel one

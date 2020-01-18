@@ -17,11 +17,11 @@
   "
   Performs the separation on audio input
 
-  targets : [string]
-    Targets for separation ('vocals', 'drums', 'bass', 'other')
-
   audio-map : AudioMap
     AudioMap with audio data to separate
+
+  targets : [string]
+    Targets for separation ('vocals', 'drums', 'bass', 'other')
 
   model-name = 'umxhq' : string
 
@@ -46,7 +46,7 @@
   ->
   SeparationResult
   "
-  [targets audio-map & {:keys [model-name niter alpha
+  [audio-map targets & {:keys [model-name niter alpha
                                residual-model device]
                         :or {model-name "umxhq", niter 1, alpha 1.0,
                              residual-model false, device "cpu"}}]

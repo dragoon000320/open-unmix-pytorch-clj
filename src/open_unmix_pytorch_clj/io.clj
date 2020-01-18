@@ -50,11 +50,11 @@
   ->
   nil
   "
-  [dir separation-res]
+  [separation-res out-dir]
   {:pre [(SeparationResult? separation-res)]}
   (let [separated (:separated separation-res)
         sample-rate (:sample-rate separation-res)
-        path (apply str (->> ["resources" [dir]]
+        path (apply str (->> ["resources" [out-dir]]
                              mkdir-tree
                              flatten
                              (interpose "/")))]
