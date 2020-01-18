@@ -66,4 +66,4 @@
     (-> audio-map
         (update-in [:audio-data]
                    get-item [(slice nil nil) (slice nil 2)])
-        (update-in :channels (fn [_] 2)))))
+        (update-in [:channels] (fn [_] 2)))))
