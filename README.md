@@ -1,7 +1,9 @@
 # open-unmix-pytorch-clj
+
 Clojure bindings for PyTorch implementation of __Open-Unmix__,
 a deep neural network reference implementation for music source separation,
 applicable for researchers, audio engineers and artists.
+
 [![Clojars Project](https://img.shields.io/clojars/v/dragoon/open-unmix-pytorch-clj.svg)](https://clojars.org/dragoon/open-unmix-pytorch-clj)
 
 * utilizes <a href="https://github.com/cnuernber/libpython-clj">great JNA libpython bindings library</a>.
