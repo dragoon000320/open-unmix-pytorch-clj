@@ -1,4 +1,4 @@
-(defproject dragoon/open-unmix-pytorch-clj "0.1.1-ALPHA"
+(defproject dragoon/open-unmix-pytorch-clj "0.1.2-ALPHA"
   :description "Clojure bindings for PyTorch implementation of Open-Unmix"
   :url "https://github.com/dragoon000320/open-unmix-pytorch-clj"
   :license {:name "Eclipse Public License"
