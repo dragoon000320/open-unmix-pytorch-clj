@@ -19,7 +19,7 @@ pip3 install -r requirements.txt
 
 * add dependency to the project.clj
 ```clj
-[dragoon000320/open-unmix-pytorch-clj "0.1.2-SNAPSHOT"]
+[dragoon000320/open-unmix-pytorch-clj "0.1.3-ALPHA"]
 ```
 
 ## Usage
@@ -27,26 +27,29 @@ pip3 install -r requirements.txt
 A little demo how to use it
 ```clj
 ;; require namespaces
-(require '[open-unmix-pytorch-clj.core :as core])
+(require '[open-unmix-pytorch-clj.core :refer :all])
 
-(require '[open-unmix-pytorch-clj.io :as oup.io])
+(require '[open-unmix-pytorch-clj.io :refer :all])
 
-(require '[open-unmix-pytorch-clj.convert :as conv])
+(require '[open-unmix-pytorch-clj.convert :refer :all])
 
 (-> "your-audio-file.wav"
     ;; reads audio file
-    oup.io/soundfile-read
+    soundfile-read
     ;; converts audio data to 2 channel one
-    conv/->2-channels
+    ->2-channels
     ;; separates audio data into required audio sources
-    (core/separate ["vocals" "drums" "other" "bass"])
+    (separate ["vocals" "drums" "other" "bass"]
+        :device "cpu"
+        ;; or if you have cuda enabled uncomment line below
+        ;; :device "cuda")
     ;; writes estimates for each audio source to the output directory
-    (oup.io/writes-estimates "out-dir"))
+    (writes-estimates "out-dir"))
 ```
 
 ## Disclaimer
 
-This is __early alpha__, current state of library is described below:
+The library is in __alpha__ at the moment, current state of library is described below:
 * for now only __separation__ of audio source implemented
 * so there is no implementation of __model training__
 * performance must be further improved
