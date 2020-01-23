@@ -3,10 +3,11 @@
   Encapsulates functionality for conversions
   "
   (:require [libpython-clj.require :refer [require-python]]
-            [libpython-clj.python :refer [$a get-item]]
+            [libpython-clj.python :refer [py.. get-item]]
             [open-unmix-pytorch-clj.validator :refer [is-ndarray?]]
             [open-unmix-pytorch-clj.model :refer [AudioMap?]]))
 
+(require-python '[numpy :as np])
 (require-python '[scipy.signal :as sig])
 (require-python '[builtins :refer [slice]])
 
@@ -36,7 +37,7 @@
         :or {sample-rate 44100.0, window "hann"
              n-fft 4096, n-hopsize 1024}}]
   {:pre [(is-ndarray? X)]}
-  (let [Zxx ($a X "__truediv__" (/ n-fft 2))
+  (let [Zxx (py.. X (__truediv__ (/ n-fft 2)))
         n-overlap (- n-fft n-hopsize)]
     (sig/istft Zxx
                sample-rate
