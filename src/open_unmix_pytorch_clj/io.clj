@@ -5,7 +5,7 @@
   (:require [open-unmix-pytorch-clj.model :refer :all]
             [open-unmix-pytorch-clj.validator :refer :all]
             [libpython-clj.require :refer [require-python]]
-            [libpython-clj.python :refer [$.]]
+            [libpython-clj.python :refer [py..]]
             [clojure.zip :as zip]))
 
 (require-python '[soundfile :as sf])
@@ -75,5 +75,5 @@
   "
   [file-path]
   (let [[audio sample-rate] (sf/read file-path :always_2d true)
-        shape ($. audio shape)]
+        shape (py.. audio -shape)]
     (->AudioMap audio sample-rate (first shape) (last shape))))
