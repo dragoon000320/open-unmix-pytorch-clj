@@ -42,9 +42,10 @@ A little demo how to use it
     (separate ["vocals" "drums" "other" "bass"]
         :device "cpu"
         ;; or if you have cuda enabled uncomment line below
-        ;; :device "cuda")
+        ;; :device "cuda"
+        )
     ;; writes estimates for each audio source to the output directory
-    (writes-estimates "out-dir"))
+    (write-estimates "out-dir"))
 ```
 
 ## Disclaimer
