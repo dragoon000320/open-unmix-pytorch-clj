@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.4-ALPHA
+### Changed
+- hotfix of core/separate for CUDA
+- update libpython-clj to 1.46
+
 ## 0.1.3-ALPHA
 ### Changed
 - changes due to update of libpython-clj to version 1.32

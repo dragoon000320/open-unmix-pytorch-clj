@@ -10,7 +10,7 @@ applicable for researchers, audio engineers and artists.
 
 ## Get Started
 
-* install python 3.7, pip
+* install python 3.6, pip
 
 * install python dependencies
 ```bash
@@ -19,7 +19,7 @@ pip3 install -r requirements.txt
 
 * add dependency to the project.clj
 ```clj
-[dragoon000320/open-unmix-pytorch-clj "0.1.3-ALPHA"]
+[dragoon000320/open-unmix-pytorch-clj "0.1.4-ALPHA"]
 ```
 
 ## Usage
@@ -42,9 +42,10 @@ A little demo how to use it
     (separate ["vocals" "drums" "other" "bass"]
         :device "cpu"
         ;; or if you have cuda enabled uncomment line below
-        ;; :device "cuda")
+        ;; :device "cuda"
+        )
     ;; writes estimates for each audio source to the output directory
-    (writes-estimates "out-dir"))
+    (write-estimates "out-dir"))
 ```
 
 ## Disclaimer

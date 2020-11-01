@@ -66,8 +66,10 @@
         ;; for each target load an open-unmix-pytorch model
         unmix-targets (mapv #(torch.hub/load
                               "sigsep/open-unmix-pytorch"
-                              "umxhq"
-                              :target %)
+                              model-name
+                              :target %
+                              :device device
+                              :pretrained true)
                             targets)
         first-unmix (first unmix-targets)
         ;; targets for separation
@@ -82,11 +84,11 @@
               ;; converts to complex numpy type
               (as-> x
                   ; X = X[..., 0] + X[..., 1]*1j
-                  (py.. (get-item x [Ellipsis 0])
-                        (__add__
-                         (py.. (get-item x [Ellipsis 1])
-                               (__mul__
-                                (complex 0 1))))))
+                    (py.. (get-item x [Ellipsis 0])
+                          (__add__
+                           (py.. (get-item x [Ellipsis 1])
+                                 (__mul__
+                                  (complex 0 1))))))
               (get-item [0])
               (py.. (transpose [2 1 0])))
         V (cond->

@@ -1,10 +1,10 @@
-(defproject dragoon/open-unmix-pytorch-clj "0.1.3-ALPHA"
+(defproject dragoon/open-unmix-pytorch-clj "0.1.4-ALPHA"
   :description "Clojure bindings for PyTorch implementation of Open-Unmix"
   :url "https://github.com/dragoon000320/open-unmix-pytorch-clj"
   :license {:name "Eclipse Public License"
             :url  "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.10.1"]
-                 [cnuernber/libpython-clj "1.32"]]
+                 [clj-python/libpython-clj "1.46"]]
   :plugins [[lein-cloverage "1.0.13"]
             [lein-shell "0.5.0"]
             [lein-ancient "0.6.15"]
