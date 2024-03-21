@@ -72,6 +72,6 @@ It is an open-source project so contributions are welcomed (pull-requests, issue
 
 ## License
 
-Copyright © 2020 Andrei Rybin
+Copyright © 2020
 
 Distributed under the <a href="https://www.eclipse.org/legal/epl-2.0/">Eclipse Public License 2.0</a>
